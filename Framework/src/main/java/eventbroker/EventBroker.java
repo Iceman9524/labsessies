@@ -16,6 +16,8 @@ final public class EventBroker implements Runnable {
         this.listeners.put("*",new HashSet<>());
     }
     private boolean queueFlag=true;
+    private final Object queueLock=new Object();
+    private boolean queueHasData=true;
 
     private record QueueItem(Event event, EventPublisher source){}
 
@@ -49,6 +51,10 @@ final public class EventBroker implements Runnable {
 
     void addEvent(EventPublisher source, Event e) {
         this.addToQueue(new QueueItem(e,source));
+        synchronized (queueLock){
+            queueHasData=true;
+            queueLock.notifyAll();
+        }
     }
 
     private void process(EventPublisher source, Event e) {
@@ -65,12 +71,21 @@ final public class EventBroker implements Runnable {
     }
     public void run(){
         QueueItem temp = null;
-        while(!(temp==null) ||queueFlag){
-            temp=this.pollQueue();
-            if (!(temp==null)) {
-                EventPublisher source = temp.source();
-                Event event = temp.event();
-                this.process(source, event);
+        while(!(temp==null) || queueFlag){
+            synchronized (queueLock) {
+                while (!queueHasData && !queueFlag) {
+                    try {
+                        queueLock.wait();
+                    } catch (InterruptedException _){}
+                }
+                temp = this.pollQueue();
+                if (!(temp == null)) {
+                    EventPublisher source = temp.source();
+                    Event event = temp.event();
+                    this.process(source, event);
+                }else {
+                    queueHasData=false;
+                }
             }
         }
     }
@@ -90,6 +105,7 @@ final public class EventBroker implements Runnable {
 
     public void stop() throws InterruptedException {
        queueFlag=false;
+       synchronized (queueLock) {queueLock.notifyAll();}
        thread.join();
     }
 }
