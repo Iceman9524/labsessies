@@ -1,14 +1,12 @@
 package eventbroker;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 
 final public class EventBroker implements Runnable {
 
-    private final HashMap<String,Set<EventListener>> listeners = new HashMap<String,Set<EventListener>>();
+    private final HashMap<String,Set<EventListener>> listeners = new HashMap<>();
+    private final Set<EventListener> listenersList = new HashSet<>();
     private final Thread thread= new Thread(this);
     private final static EventBroker broker = new EventBroker();
     private final LinkedList<QueueItem> queue = new LinkedList<>();
@@ -27,9 +25,11 @@ final public class EventBroker implements Runnable {
 
     public void addEventListener(EventListener s){
        listeners.get("*").add(s);
+       listenersList.add(s);
     }
 
     public void addEventListener(String type, EventListener s) {
+        listenersList.add(s);
         if (listeners.containsKey(type)) {
             listeners.get(type).add(s);
         }else{
@@ -40,6 +40,7 @@ final public class EventBroker implements Runnable {
     }
 
     public void removeEventListener(EventListener s) {
+        listenersList.remove(s);
         for (Set<EventListener> i:listeners.values()) {
             i.remove(s);
         }
@@ -106,6 +107,9 @@ final public class EventBroker implements Runnable {
     public void stop() throws InterruptedException {
        queueFlag=false;
        synchronized (queueLock) {queueLock.notifyAll();}
+        for (EventListener l : listenersList) {
+            l.shutdown();
+        }
        thread.join();
     }
 }

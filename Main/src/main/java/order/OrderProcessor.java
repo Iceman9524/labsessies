@@ -30,6 +30,11 @@ public class OrderProcessor implements EventListener {
         processedOrders++;
     }
 
+    @Override
+    public void shutdown() {
+        threadPool.shutdown();
+    }
+
     public static int getNumberOfOrders(){
         return processedOrders;
     }

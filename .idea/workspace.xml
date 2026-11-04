@@ -4,9 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b45c164-54aa-4f88-abe7-e8b45a210601" name="Changes" comment="Stop queue from busy waiting">
+    <list default="true" id="4b45c164-54aa-4f88-abe7-e8b45a210601" name="Changes" comment="Opgave 8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarm/Alarm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarm/AlarmListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarm/EmergencyCallCenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarm/FireDepartment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarm/Hospital.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarm/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarm/PoliceDepartment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarmevent/AlarmEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarmevent/EmergencyCallCenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarmevent/FireDepartment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarmevent/Hospital.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarmevent/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarmevent/PoliceDepartment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarmwhiteboard/EmergencyCallCenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarmwhiteboard/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/alarmwhiteboard/Whiteboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/eventbroker/EventBroker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/eventbroker/EventBroker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/eventbroker/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/eventbroker/EventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/eventbroker/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarm/Alarm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarm/AlarmListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarm/EmergencyCallCenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarm/FireDepartment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarm/Hospital.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarm/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarm/PoliceDepartment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarmevent/AlarmEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarmevent/EmergencyCallCenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarmevent/FireDepartment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarmevent/Hospital.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarmevent/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarmevent/PoliceDepartment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarmwhiteboard/EmergencyCallCenter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarmwhiteboard/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/alarmwhiteboard/Whiteboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/eventbroker/EventBroker$QueueItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/eventbroker/EventBroker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/eventbroker/EventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Framework/target/classes/eventbroker/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/main/java/order/OrderProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/main/java/order/OrderProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +206,8 @@
     <MESSAGE value="Update gitignore" />
     <MESSAGE value="Bump version number" />
     <MESSAGE value="Stop queue from busy waiting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stop queue from busy waiting" />
+    <MESSAGE value="Opgave 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opgave 8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
