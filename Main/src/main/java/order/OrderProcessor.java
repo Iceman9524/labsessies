@@ -13,7 +13,7 @@ public class OrderProcessor implements EventListener {
     public static synchronized OrderProcessor make_OrderProcessor(){
         return new OrderProcessor();
     }
-    private OrderProcessor(){
+    protected OrderProcessor(){
         EventBroker.getEventBroker().addEventListener(OrderEvent.TYPE_ORDER, this);
     }
     
