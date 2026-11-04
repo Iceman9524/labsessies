@@ -21,11 +21,12 @@ public class Main {
         @Override
         public void run() {
             for(int i=0;i<customer.getNoOrders();i++){
-                this.customer.buy("item-"+i);
-            }
-
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {}
+                this.customer.buy("item-" + i);
         }
-    }
+    }}
 
     public static void main(String[] args){
         
