@@ -1,40 +1,40 @@
 package order;
 
-import eventbroker.EventBroker;
-import order.OrderProcessor;
+import eventbroker.Event;
+
 import java.util.HashSet;
 import java.util.Set;
 
 
 public class BlacklistOrderProcessor extends OrderProcessor {
 
-    private Set<String> blacklist;
+    private final Set<String> blacklist;
 
-    public static synchronized BlacklistOrderProcessor make_BlacklistOrderProcessor(){
-        return new BlacklistOrderProcessor();
+    public static synchronized BlacklistOrderProcessor make_BlacklistOrderProcessor(int numThreads){
+        return new BlacklistOrderProcessor(numThreads);
     }
-    private BlacklistOrderProcessor(){
-        super();
+    private BlacklistOrderProcessor(int numThreads){
+        super(numThreads);
         
         // some work to get to the blacklist data
         try {
             Thread.sleep(10);
-        } catch (InterruptedException ex) {}
+        } catch (InterruptedException _) {}
        
         // add the blacklisted customers
         blacklist = new HashSet<String>();
         blacklist.add("Jan");
     }
-    
+
     @Override
-    protected void processOrder(OrderEvent order){
-        // ignore blacklisted customers
+    public void handleEvent(Event e) {
+        OrderEvent order = (OrderEvent) e;
+
         if(blacklist.contains(order.getCustomer())){
             System.out.println("Order of customer "+order.getCustomer()+" discarded");
             return;
         }
-        
-        super.processOrder(order);
+        super.threadPool.execute(new OrderProcessorTask(order));
+        processedOrders++;
     }
-    
 }

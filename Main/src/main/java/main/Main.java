@@ -35,7 +35,7 @@ public class Main {
         
 
         EventBroker.getEventBroker().start();
-        BlacklistOrderProcessor blop = BlacklistOrderProcessor.make_BlacklistOrderProcessor();
+        BlacklistOrderProcessor blop = BlacklistOrderProcessor.make_BlacklistOrderProcessor(names.length);
 
         for(String name : names){
             Customer customer = new Customer(name,noOrders);

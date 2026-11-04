@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b45c164-54aa-4f88-abe7-e8b45a210601" name="Changes" comment="Bump version number">
+    <list default="true" id="4b45c164-54aa-4f88-abe7-e8b45a210601" name="Changes" comment="Stop queue from busy waiting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Framework/src/main/java/eventbroker/EventBroker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/src/main/java/eventbroker/EventBroker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Framework/target/classes/eventbroker/EventBroker$QueueItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/target/classes/eventbroker/EventBroker$QueueItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Framework/target/classes/eventbroker/EventBroker.class" beforeDir="false" afterPath="$PROJECT_DIR$/Framework/target/classes/eventbroker/EventBroker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/main/java/order/OrderProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/main/java/order/OrderProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +167,8 @@
     <MESSAGE value="Opdracht 5" />
     <MESSAGE value="Update gitignore" />
     <MESSAGE value="Bump version number" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bump version number" />
+    <MESSAGE value="Stop queue from busy waiting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stop queue from busy waiting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
