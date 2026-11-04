@@ -9,8 +9,11 @@ import java.util.Set;
 public class BlacklistOrderProcessor extends OrderProcessor {
 
     private Set<String> blacklist;
-    
-    public BlacklistOrderProcessor(){
+
+    public static synchronized BlacklistOrderProcessor make_BlacklistOrderProcessor(){
+        return new BlacklistOrderProcessor();
+    }
+    private BlacklistOrderProcessor(){
         super();
         
         // some work to get to the blacklist data
