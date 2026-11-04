@@ -23,7 +23,7 @@ public class Main {
             for(int i=0;i<customer.getNoOrders();i++){
                     try {
                         Thread.sleep(1000);
-                    } catch (InterruptedException e) {}
+                    } catch (InterruptedException _) {}
                 this.customer.buy("item-" + i);
         }
     }}
