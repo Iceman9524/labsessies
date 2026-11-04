@@ -10,8 +10,10 @@ import eventbroker.EventListener;
 public class OrderProcessor implements EventListener {
 
     protected static int processedOrders = 0;
-    
-    public OrderProcessor(){
+    public static synchronized OrderProcessor make_OrderProcessor(){
+        return new OrderProcessor();
+    }
+    private OrderProcessor(){
         EventBroker.getEventBroker().addEventListener(OrderEvent.TYPE_ORDER, this);
     }
     

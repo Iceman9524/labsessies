@@ -2,6 +2,7 @@
 package main;
 
 import eventbroker.EventBroker;
+import order.BlacklistOrderProcessor;
 import order.Customer;
 import order.OrderProcessor;
 
@@ -11,20 +12,22 @@ import java.util.List;
 
 public class Main {
     
-    public static int noOrders = 20;
+    public static int noOrders = 2;
 
     public static void main(String[] args){
         
         String[] names = new String[]{"Jan", "Piet", "Joris", "Corneel"};
         ArrayList<Customer> customers=new ArrayList<Customer>();
         
-        OrderProcessor orderProcessor = new OrderProcessor();
-        EventBroker.getEventBroker().start();
 
+        EventBroker.getEventBroker().start();
+        BlacklistOrderProcessor blop = BlacklistOrderProcessor.make_BlacklistOrderProcessor();
         for(String name : names){
             Customer customer = new Customer(name,noOrders);
             customers.add(customer);
         }
+
+
 
         customers.forEach((customer -> {
             try {
